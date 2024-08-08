@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 console.log('ok')
 
-// document.querySelectorAll('.highlight-btn').forEach(button => {
-//   button.addEventListener('click', function() {
-//     document.querySelectorAll('.highlight-btn').forEach(btn => btn.classList.remove('active'));
-//     this.classList.add('active');
-//   });
-// });
-// console.log('ok')
+document.querySelectorAll('.highlight-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    document.querySelectorAll('.highlight-btn').forEach(btn => btn.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+console.log('ok')

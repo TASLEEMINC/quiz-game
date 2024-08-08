@@ -1,0 +1,67 @@
+body {
+    background-image: url(BGpicPNG.png);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* background-color: #c4ff02; */
+}
+
+.container {
+    text-align: center;
+    color: mediumblue;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #00ffbb;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #1eaa9a;
+    color: #e5ff00;
+    border-radius: 100px;
+    border: red 3px solid;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #b2dfdb;
+}
+
+#timer, #score {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#result {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 19px;
+    font-weight: bold;
+}
+
+.highlight-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .highlight-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  

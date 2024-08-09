@@ -16,10 +16,24 @@ const questions = [
     }
 ];
 
+
+
+
+
+
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
-let timeLeft = 300000;
+let timeLeft = 30;
+
+
+
+const resetBtnEl = document.querySelector('#reset')
+
+
+
+
+
 
 function startTimer() {
     timer = setInterval(() => {
@@ -28,40 +42,67 @@ function startTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            endQuiz("Time's up! Quiz over.");
+            endQuiz("Time's up! Quiz is over.");   // clear
         }
-    }, 1000);
-}
+    }, 1000);          // clear
+}                     // clear let's go to endQuiz function
 
 function playSound(soundId) {
     const sound = document.getElementById(soundId);
     sound.play();
-}
+}                      // clear
+
+
+
+
 
 function loadQuestion() {
+    
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const resultElement = document.getElementById('result');
     const nextButton = document.getElementById('nextButton');
 
-    if (currentQuestionIndex >= questions.length) {
-        endQuiz("Quiz completed!");
+    if (currentQuestionIndex >= questions.length) {  // length is 3
+        console.log(questions.length)
+        endQuiz("Quiz completed!");     // let's check
         return;
     }
 
     const question = questions[currentQuestionIndex];
+    const answr = questions[currentQuestionIndex].answer;
     questionElement.innerHTML = question.question;
     optionsElement.innerHTML = "";
 
     question.options.forEach(option => {
-        const button = document.createElement('button');
+        const button = document.createElement('button');   // pay attn here
         button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-        optionsElement.appendChild(button);
-    });
-
-    nextButton.style.display = 'none';
+        button.onclick = () => {
+            checkAnswer(option);
+            if (answr === option) {
+                button.style.backgroundColor = 'green';
+                console.log('works')
+            }
+        }
+        optionsElement.appendChild(button); // for each option creates button
+        nextButton.style.display = 'block';
+    });    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function checkAnswer(selectedOption) {
     const question = questions[currentQuestionIndex];
@@ -81,29 +122,62 @@ function checkAnswer(selectedOption) {
     nextButton.style.display = 'block';
 }
 
+
+
+
+
+
+
+
 function nextQuestion() {
     currentQuestionIndex++;
     loadQuestion();
 }
 
-function endQuiz(message) {
-    document.getElementById('question').innerHTML = message;
-    document.getElementById('options').innerHTML = "";
-    document.getElementById('nextButton').style.display = 'none';
-    document.getElementById('score').textContent = `Final Score: ${score}`;
+
+
+
+
+
+
+
+
+
+function endQuiz(message) {   // creates par message
+    document.getElementById('question').innerHTML = message; //clear
+    document.getElementById('options').innerHTML = "Do you want to restart?";
+    document.getElementById('nextButton').style.display = 'none'; // hides button
+    document.getElementById('score').textContent = `Final Score: ${score}`; // let's check
 }
 
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#bgMusic').play();
+    document.getElementById('bgMusic').play();
     startTimer();
     loadQuestion();
 });
-console.log('ok')
+
+
+
+
+
+
 
 document.querySelectorAll('.highlight-btn').forEach(button => {
   button.addEventListener('click', function() {
-    document.querySelectorAll('.highlight-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.highlight-btn').forEach(btn => btn.classList.add('active'));
     this.classList.add('active');
   });
 });
 console.log('ok')
+
+
+
+resetBtnEl.addEventListener('click', () => {
+    location.reload()
+})

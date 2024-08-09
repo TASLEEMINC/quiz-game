@@ -14,6 +14,9 @@
 
 ## Pseudocode
 
+Defining array of objects. Each object will have 3 properties
+for question, options and answer.
+
 Start:
 
 Variables and elements have to be initialized;

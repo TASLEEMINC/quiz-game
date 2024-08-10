@@ -1,44 +1,37 @@
 ## User Stories
 
 1. As a user I want to open a browser game named "Quiz Game"
-    - HTML document with a nice background and layout of the elements, game description and buttons
+   - HTML document with a nice background and layout of the elements, game description and buttons
 2. Once I open the game, it should describe the game and rules.
 3. The game should warn about time restriction for each question.
 4. It should have a nice outlook with inviting decoration and with a "start" button to start the game.
 5. Any buttons pressed should play a sound and activate an action.
-6. Correct answers should add scores to my user account.
+6. Correct answers should be highlighted in green and wrong ones in red;
 7. Wrong answers should make 'wrong' sounds
-8. I would like to see end result of my answers
-
-
+8. I would like to see my score at the end of the game;
 
 ## Pseudocode
 
 Defining array of objects. Each object will have 3 properties
 for question, options and answer.
 
-Start:
+Declare:
 
-Variables and elements have to be initialized;
-There will be an array of objects(questions);
-Current question has an index;
-Create questionElement, answerButtonsElement and nextButton elements;
+Variables and cached elements;
 
+Create functions:
 
+- for timer;
+- for music in the background;
+- for displaying questions;
+- for checking answers;
+- for the next question;
+- for ending the quiz;
 
-Add event listeners to elements
-Listen for click on cached element and on a click
-make sure an image has been selected
-Get the element id and use it to create an Audio instance/element
-Fix its volume
-Play the audio element
+Create buttons:
 
+- Buttons to select the answer;
+- Button to proceed to the next question;
+- Button to restart the quiz game;
 
-Buttons:
-Buttons to select the answer. Answers should be checked against correct answer.
-
-Timer Set up:
-
-Each question visible for a certain period of time
-
-when no more questions left, the game should show the score
+When time is up and no more questions left, the game should end and the score has to be displayed

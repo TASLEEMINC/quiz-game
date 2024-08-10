@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-</head>
+  </head>
 
-
-<body>
-
+  <body>
     <div class="container">
+      <h1>Quiz Game</h1>
 
-        <h1>Quiz Game</h1>
+      <div id="timer">Time left: 30s</div>
 
-        <div id="timer">Time left: 30s</div>
+      <div id="question"></div>
 
-        <div id="question"></div>
+      <div id="options"></div>
 
-        <div id="options"></div>
+      <button class="highlight-btn" id="nextButton" onclick="nextQuestion()">
+        Next Question
+      </button>
 
-        <button class="highlight-btn" id="nextButton" onclick="nextQuestion()">Next Question</button>
+      <div id="result"></div>
 
-        <div id="result"></div>
+      <div id="score">Score: 0</div>
 
-        <div id="score">Score: 0</div>
-
-        <audio id="correctSound" src="./audio/bird.mp3"></audio>
-        <audio id="wrongSound" src="./audio/cow.mp3"></audio>
-        <audio id="bgMusic" src="./audio/project background music Sad News.mp3" loop></audio>
-        <button id="reset">Restart</button>
+      <audio id="correctSound" src="./audio/bird.mp3"></audio>
+      <audio id="wrongSound" src="./audio/cow.mp3"></audio>
+      <audio
+        id="bgMusic"
+        src="./audio/project background music Sad News.mp3"
+        loop
+      ></audio>
+      <button id="reset">Restart</button>
     </div>
-
-</body>
-
-
-
+  </body>
 </html>

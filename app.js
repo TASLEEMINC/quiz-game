@@ -19,7 +19,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
-let timeLeft = 30;
+let timeLeft = 60;
 
 const resetBtnEl = document.querySelector("#reset");
 

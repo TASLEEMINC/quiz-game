@@ -1,7 +1,7 @@
 ## User Stories
 
 1. As a user I want to open a browser game named "Quiz Game"
-   - HTML document with a nice background and layout of the elements, game description and buttons
+   - HTML document with a nice background and layout of the elements, buttons
 2. Once I open the game, it should describe the game and rules.
 3. The game should warn about time restriction for each question.
 4. It should have a nice outlook with inviting decoration and with a "start" button to start the game.
